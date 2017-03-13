@@ -1,7 +1,7 @@
 app.controller('HeroListController', ['$http', function($http){
     console.log('Hero List Controller loaded');
     var self = this;
-    self.message = 'awwee yeah!';
+
     self.herosList = [];
 
     $http({
@@ -11,4 +11,6 @@ app.controller('HeroListController', ['$http', function($http){
       // console.log(response.data);
       self.herosList = response.data;
     });
+
+    
 }]);
