@@ -11,7 +11,7 @@ app.controller('HeroListController', ['$http', function($http){
       method: 'GET',
       url: '/heroes'
     }).then(function(response){
-      console.log(response.data);
+      // console.log(response.data);
       self.herosList = response.data;
     });
   }
@@ -25,5 +25,14 @@ app.controller('HeroListController', ['$http', function($http){
       getHeroes();
     });
 }
+  self.updateHero = function(heroID, hero){
+    $http({
+      method: 'PUT',
+      url: '/heroes/' + heroID,
+      data: hero
+    }).then(function(response){
+      getHeroes();
+    });
+  }
 
 }]);

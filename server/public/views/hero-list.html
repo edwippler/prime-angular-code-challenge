@@ -1,4 +1,4 @@
 <h2>Curent Hero Roster</h2>
 <ul ng-repeat="hero in hlc.herosList">
-  <li>{{hero.persona}} - a.k.a - {{hero.alias}} <button ng-click="hlc.dropHero(hero.id)">Remove</button></li>
+  <li><input type="text" ng-model="hero.persona"> - a.k.a - {{hero.alias}} | Power: {{hero.name}} <button ng-click="hlc.updateHero(hero.id, hero)">Edit</button><button ng-click="hlc.dropHero(hero.id)">Remove</button></li>
 </ul>
