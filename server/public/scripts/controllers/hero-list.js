@@ -4,13 +4,26 @@ app.controller('HeroListController', ['$http', function($http){
 
     self.herosList = [];
 
+    getHeroes();
+
+    function getHeroes() {
     $http({
       method: 'GET',
       url: '/heroes'
     }).then(function(response){
-      // console.log(response.data);
+      console.log(response.data);
       self.herosList = response.data;
     });
+  }
 
-    
+    self.dropHero = function(heroID){
+      console.log(heroID, 'was clicked');
+    $http({
+      method: 'DELETE',
+      url: '/heroes/' + heroID
+    }).then(function(response){
+      getHeroes();
+    });
+}
+
 }]);
