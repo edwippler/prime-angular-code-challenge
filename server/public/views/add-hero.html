@@ -1,4 +1,9 @@
-<form method="post">
-  <input placeholder="{{add.test}}">
-
+<form method="post" ng-submit="add.addHero()">
+  <label for="persona">Persona:</label>
+  <input type="text" name="persona" ng-model="add.newHero.persona">
+  <label for="persona">Alias:</label>
+  <input type="text" name="persona" ng-model="add.newHero.alias">
+  <label for="persona">Power ID:</label>
+  <input type="text" name="persona" ng-model="add.newHero.power_id">
+  <button type="submit">Power Up!</button>
 </form>
